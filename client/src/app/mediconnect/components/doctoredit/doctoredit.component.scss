@@ -1,16 +1,17 @@
+/* ================= FORM CARD (UNCHANGED STRUCTURE, ONLY COLORS) ================= */
 .form-container {
   max-width: 600px;
   margin: 36px auto;
   padding: 32px 28px 28px 28px;
-  background: #fff;
-  border: 1.5px solid #cdd7ee;
+  background: #ffffff;
+  border: 1.5px solid #bfe9e4;
   border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(40, 60, 120, 0.10);
+  box-shadow: 0 6px 18px rgba(26, 163, 154, 0.18);
 
   h2 {
     text-align: center;
     font-size: 2rem;
-    color: #22396c;
+    color: #1aa39a;
     margin-bottom: 23px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -29,28 +30,26 @@
         font-size: 1rem;
         font-weight: 600;
         margin-bottom: 5px;
-        color: #395490;
+        color: #1aa39a;
         letter-spacing: 0.3px;
       }
 
       input[type="text"],
       input[type="email"],
-      input[type="number"],
-      input[type="date"],
       input[type="password"],
-      textarea {
+      input[type="number"] {
         padding: 12px 14px;
         font-size: 1rem;
-        border: 1.2px solid #cdd7ee;
+        border: 1.2px solid #bfe9e4;
         border-radius: 7px;
         outline: none;
-        background: #f8fbff;
-        color: #22396c;
+        background: #f2fffd;
+        color: #1a6f69;
         transition: border-color 0.2s, box-shadow 0.2s;
 
         &:focus {
-          border-color: #23b6e7;
-          box-shadow: 0 0 7px rgba(35, 182, 231, 0.12);
+          border-color: #2bbdb3;
+          box-shadow: 0 0 0 3px rgba(43, 189, 179, 0.25);
         }
       }
 
@@ -67,59 +66,51 @@
       justify-content: center;
 
       button[type="submit"] {
-        background: linear-gradient(90deg, #23b6e7 0%, #395490 100%);
-        color: #fff;
+        background: linear-gradient(90deg, #2bbdb3 0%, #1aa39a 100%);
+        color: #ffffff;
         border: none;
         border-radius: 7px;
         padding: 12px 28px;
         font-size: 1rem;
         font-weight: 600;
         cursor: pointer;
+        box-shadow: 0 2px 10px rgba(43, 189, 179, 0.25);
         transition: background 0.2s, box-shadow 0.18s;
-        box-shadow: 0 2px 10px rgba(35, 182, 231, 0.07);
 
         &:hover,
         &:focus {
-          background: linear-gradient(90deg, #2ecc71 0%, #23b6e7 100%);
+          background: linear-gradient(90deg, #3dd6cb 0%, #2bbdb3 100%);
           outline: none;
         }
 
         &:disabled {
-          background: #bfcbe3;
-          color: #f4f4f6;
+          background: #bfe9e4;
+          color: #ffffff;
           cursor: not-allowed;
         }
       }
     }
+
     .form-footer {
       text-align: center;
       margin: 20px 0 0 0;
       font-size: 15px;
-      color: #395490;
+      color: #1aa39a;
     }
   }
+}
 
-  .success-message {
-    text-align: center;
-    color: #187d3b;
-    background-color: #d4edda;
-    border: 1.2px solid #c3e6cb;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 20px;
-    border-radius: 7px;
-    padding: 10px;
-  }
+/* ================= PAGE BACKGROUND (MEDICAL THEME) ================= */
+/* ✅ ONLY BACKGROUND: heartbeats + stethoscope like login page */
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #e6f7f4;
 
-  .error-message {
-    text-align: center;
-    color: #c0392b;
-    background-color: #f8d7da;
-    border: 1.2px solid #f5c6cb;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 20px;
-    border-radius: 7px;
-    padding: 10px;
-  }
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='900' height='900' viewBox='0 0 900 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232bbdb3' stroke-width='4' opacity='0.22'%3E%3Cpath d='M0 450 L180 450 L220 390 L280 510 L350 450 L520 450'/%3E%3C/g%3E%3Cg fill='%232bbdb3' opacity='0.18'%3E%3Cpath d='M300 650 c-55 -55 -120 -95 -120 -170 c0 -65 55 -120 120 -120 c40 0 80 25 100 60 c20 -35 60 -60 100 -60 c65 0 120 55 120 120 c0 75 -65 115 -120 170 l-100 90 z'/%3E%3C/g%3E%3Cg stroke='%232bbdb3' stroke-width='6' fill='none' opacity='0.22'%3E%3Ccircle cx='720' cy='240' r='34'/%3E%3Cpath d='M720 274 v120 c0 45 -45 45 -45 90'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-size: 750px;
+  background-position: left center;
 }

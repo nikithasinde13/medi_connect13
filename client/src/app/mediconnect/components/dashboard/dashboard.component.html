@@ -59,6 +59,7 @@
                         <th>Clinic Name</th>
                         <th>Patient Name</th>
                         <th>Date</th>
+                        <th>Purpose</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
@@ -68,9 +69,11 @@
                         <td>{{ appointment.clinic.clinicName }}</td>
                         <td>{{ appointment.patient.fullName }}</td>
                         <td>{{ appointment.appointmentDate | date }}</td>
+                        <td>{{ appointment.purpose}}</td>
                         <td>{{ appointment.status }}</td>
-                        <td>
-                            <button (click)="cancelAppointment(appointment)" class="btn-delete" [disabled]="appointment.status === 'Cancel'">Cancel</button>
+                        <td class="actions-cell">
+                            <button (click)="acceptAppointment(appointment)" [ngClass]="{'btn-accept': appointment.status !== 'Accepted','btn-disabled': appointment.status === 'Accepted'}" [disabled]="appointment.status === 'Accepted'">Accept</button>
+                            <button (click)="cancelAppointment(appointment)" class="btn-delete full-width" [disabled]="appointment.status === 'Cancel'"> Cancel </button>
                         </td>
                     </tr>
                 </tbody>
@@ -134,6 +137,7 @@
                         <th>Patient Name</th>
                         <th>Date</th>
                         <th>Status</th>
+                        <th>Purpose</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -142,6 +146,7 @@
                         <td>{{ appointment.patient.fullName }}</td>
                         <td>{{ appointment.appointmentDate | date }}</td>
                         <td>{{ appointment.status }}</td>
+                        <td>{{appointment.purpose}}</td>
                     </tr>
                 </tbody>
             </table>

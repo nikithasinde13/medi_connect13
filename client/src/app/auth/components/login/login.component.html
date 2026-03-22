@@ -1,76 +1,43 @@
-<nav class="mc-navbar" role="navigation" aria-label="Primary">
-  <div class="mc-navbar__brand" routerLink="/" aria-label="MediConnect Home">
-    <span class="mc-logo">MC</span>
-    <span class="mc-title">MediConnect</span>
-  </div>
+<div class="login-page">
+  <div class="login-card">
 
-  <button class="mc-toggle" aria-label="Toggle menu" aria-expanded="false" (click)="isOpen = !isOpen">
-    <span class="mc-toggle__bar"></span>
-    <span class="mc-toggle__bar"></span>
-    <span class="mc-toggle__bar"></span>
-  </button>
+    <!-- App branding -->
+    <h1 class="app-title">MediConnect</h1>
+    <p class="app-caption">Care. Connect. Consult.</p>
 
-  <div class="mc-navbar__actions" [class.is-open]="isOpen">
-    <a routerLink="/auth/login" class="mc-link">Login</a>
-    <a routerLink="/auth/register" class="mc-link mc-link--primary">Sign up</a>
-  </div>
-</nav>
+    <!-- Section title -->
+    <h2 class="login-title">LOGIN</h2>
 
-<div class="login-form-container">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-    <h2 class="form-title">Login</h2>
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input
-        id="username"
-        formControlName="username"
-        type="text"
-        placeholder="Enter Username"
-        class="form-input"
-      />
-      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error">
-        <small *ngIf="loginForm.get('username')?.hasError('required')">Username is required.</small>
-        <small *ngIf="loginForm.get('username')?.hasError('pattern')">
-          Username cannot contain special characters.
-        </small>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div class="input-group">
+        <input
+          type="text"
+          formControlName="username"
+          placeholder="UserName"
+        />
       </div>
-    </div>
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        id="password"
-        formControlName="password"
-        type="password"
-        placeholder="Enter Password"
-        class="form-input"
-      />
-      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
-        <small *ngIf="loginForm.get('password')?.hasError('required')">Password is required.</small>
-        <small *ngIf="loginForm.get('password')?.hasError('minlength')">
-          Password must be at least 8 characters long.
-        </small>
-        <small *ngIf="loginForm.get('password')?.hasError('pattern')">
-          Password must contain at least one capital letter and one numeric digit.
-        </small>
+      <div class="input-group">
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+        />
       </div>
-    </div>
 
-    <button type="submit" class="form-btn" [disabled]="loginForm.invalid">Login</button>
+      <p class="forgot">Forgot Password</p>
 
-    <div class="form-footer">
-      <p>
-        Don't have an account?
-        <a routerLink="/auth/register" class="link">Sign up</a>
+      <button type="submit" class="login-btn" [disabled]="loginForm.invalid">
+        Login
+      </button>
+
+      <p class="signup-text">
+        Don’t Have Account?
+        <a routerLink="/auth/register" class="signup-link">Sign Up</a>
       </p>
-    </div>
 
-    <div *ngIf="successMessage" class="success-message">
-      <p>{{ successMessage }}</p>
-    </div>
+    </form>
 
-    <div *ngIf="errorMessage" class="error-message">
-      <p>{{ errorMessage }}</p>
-    </div>
-  </form>
+  </div>
 </div>

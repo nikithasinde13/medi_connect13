@@ -175,4 +175,16 @@ export class DashboardComponent implements OnInit {
             })
         }
     }
+  acceptAppointment(appointment: Appointment): void {
+    if (confirm('Are you sure you want to accept this appointment?')) {
+        appointment.status = 'Accepted';
+
+        this.mediconnectService.updateAppointment(appointment).subscribe({
+            next: () => {
+                this.loadDoctorData(); // refresh data
+            },
+            error: (error) => console.error('Error cancelling appointment:', error)
+        });
+    }
+}
 }

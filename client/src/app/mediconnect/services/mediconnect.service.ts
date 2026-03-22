@@ -102,6 +102,7 @@ export class MediConnectService {
     return this.http.put<Appointment>(`${this.baseUrl}/appointment/${appointment.appointmentId}`, appointment);
   }
 
+
   deleteAppointment(appointmentId: number): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/appointment/${appointmentId}`);
   }
