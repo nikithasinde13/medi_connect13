@@ -1,6 +1,9 @@
 package com.edutech.progressive.entity;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
 @Entity
@@ -11,13 +14,17 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer appointmentId;
 
-    @ManyToOne
-    @JoinColumn(name = "patient_id", nullable = false)
-    private Patient patient;
 
-    @ManyToOne
-    @JoinColumn(name = "clinic_id", nullable = false)
-    private Clinic clinic;
+@ManyToOne(fetch = FetchType.EAGER)
+@JoinColumn(name = "patient_id")
+@JsonIgnoreProperties({"appointments"})
+private Patient patient;
+
+@ManyToOne(fetch = FetchType.EAGER)
+@JoinColumn(name = "clinic_id")
+@JsonIgnoreProperties({"appointments"})
+private Clinic clinic;
+
 
     @Column(name = "appointment_date", nullable = false)
     private Date appointmentDate;
