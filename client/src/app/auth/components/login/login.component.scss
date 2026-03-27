@@ -1,3 +1,52 @@
+.mc-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #5E9896;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(94, 152, 150, 0.15);
+}
+ 
+.mc-navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mc-navbar__brand .mc-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  background: #3c6e6c;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+ 
+.mc-navbar__brand .mc-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.mc-navbar__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
 /* Full-page background */
 .login-page {
   min-height: 100vh;
@@ -10,7 +59,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Medical background illustration */
+
 .login-page::before {
   content: "";
   position: absolute;
@@ -22,10 +71,11 @@
   background-size: cover;
   background-position: left center;
 
-  pointer-events: none; /* ✅ allows clicking */
+  pointer-events: none; 
 }
 
-/* Login card */
+
+
 .login-card {
   position: relative;
   z-index: 2;
@@ -36,7 +86,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* App title */
+
 .app-title {
   margin: 0;
   font-size: 26px;
@@ -44,14 +94,14 @@
   color: #2fb5a8;
 }
 
-/* Caption */
+
 .app-caption {
   margin: 6px 0 22px;
   font-size: 13px;
   color: #6b8f8a;
 }
 
-/* Login heading */
+
 .login-title {
   margin-bottom: 26px;
   font-size: 18px;
@@ -59,7 +109,7 @@
   color: #2fb5a8;
 }
 
-/* Input fields */
+
 .input-group {
   margin-bottom: 22px;
 }
@@ -74,7 +124,7 @@
   background: transparent;
 }
 
-/* Forgot password */
+
 .forgot {
   text-align: left;
   font-size: 12px;
@@ -83,7 +133,7 @@
   cursor: pointer;
 }
 
-/* Login button */
+
 .login-btn {
   padding: 6px 20px;
   background: #f2f2f2;
@@ -92,7 +142,7 @@
   cursor: pointer;
 }
 
-/* Signup */
+
 .signup-text {
   margin-top: 18px;
   font-size: 12px;
@@ -108,4 +158,16 @@
 
 .signup-link:hover {
   text-decoration: underline;
+}
+
+.error {
+  color: #e53935;
+  font-size: 11px;
+  display: block;
+  margin-top: 6px;
+}
+
+.server-error {
+  margin-top: 12px;
+  text-align: center;
 }

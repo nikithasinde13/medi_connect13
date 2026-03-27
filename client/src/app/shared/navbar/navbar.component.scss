@@ -4,7 +4,7 @@
   align-items: center;
   padding: 12px 24px;
 
-  /* ✅ login page style background */
+
   background: linear-gradient(90deg, #2bb7a9 0%, #26a89c 100%);
   color: #ffffff;
 
@@ -21,7 +21,7 @@
   flex-wrap: wrap;
 }
 
-/* ✅ Nav links */
+
 .nav-link {
   text-decoration: none;
   color: #e6f7f4;
@@ -41,13 +41,13 @@
   outline: none;
 }
 
-/* ✅ Active link */
+
 .nav-link.active {
   background-color: #ffffff;
   color: #1f6f67;
 }
 
-/* ✅ App name */
+
 .app-name {
   font-size: 18px;
   font-weight: bold;
@@ -56,12 +56,11 @@
   color: #ffffff;
 }
 
-/* ✅ Logout alignment */
+
 .logout-container {
   margin-left: auto;
 }
 
-/* ✅ Mobile view */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;

@@ -13,8 +13,7 @@ export class LogoutComponent{
     doctorDetails: any;
     constructor(private authService: AuthService, private router: Router) { }
     userName: string = localStorage.getItem('userName') || 'User';
-    logout(): void {
-        
+    logout(): void {    
     const confirmLogout = window.confirm('Are you sure you want to logout?');
     if (!confirmLogout) {
       return; 
@@ -22,5 +21,4 @@ export class LogoutComponent{
         this.authService.logout();
         this.router.navigate(["/auth"]);
     }
-
 }

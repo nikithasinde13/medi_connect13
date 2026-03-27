@@ -1,11 +1,23 @@
+<nav class="mc-navbar" role="navigation" aria-label="Primary">
+<div class="mc-navbar__brand" routerLink="/" aria-label="MediConnect Home">
+<span class="mc-logo">MC</span>
+<span class="mc-title">MediConnect</span>
+</div>
+ 
+  <div class="mc-navbar__actions" [class.is-open]="isOpen">
+<a routerLink="/auth/login" class="mc-link">Login</a>
+<a routerLink="/auth/register" class="mc-link mc-link--primary">Sign up</a>
+</div>
+</nav>
+
 <div class="login-page">
   <div class="login-card">
 
-    <!-- App branding -->
+
     <h1 class="app-title">MediConnect</h1>
     <p class="app-caption">Care. Connect. Consult.</p>
 
-    <!-- Section title -->
+  
     <h2 class="login-title">LOGIN</h2>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -14,24 +26,62 @@
         <input
           type="text"
           formControlName="username"
-          placeholder="UserName"
+          placeholder="Username"
         />
+
+        <small class="error"
+          *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+
+          <span *ngIf="loginForm.get('username')?.errors?.['required']">
+            Username is required
+          </span>
+
+          <span *ngIf="loginForm.get('username')?.errors?.['pattern']">
+            Username must contain only letters and numbers
+          </span>
+
+        </small>
       </div>
 
+   
       <div class="input-group">
         <input
           type="password"
           formControlName="password"
           placeholder="Password"
         />
+
+        <small class="error"
+          *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+
+          <span *ngIf="loginForm.get('password')?.errors?.['required']">
+            Password is required
+          </span>
+
+          <span *ngIf="loginForm.get('password')?.errors?.['minlength']">
+            Password must be at least 8 characters
+          </span>
+
+          <span *ngIf="loginForm.get('password')?.errors?.['pattern']">
+            Must contain 1 uppercase letter and 1 number
+          </span>
+
+        </small>
       </div>
 
-      <p class="forgot">Forgot Password</p>
-
-      <button type="submit" class="login-btn" [disabled]="loginForm.invalid">
+     
+      <button type="submit"
+              class="login-btn"
+              [disabled]="loginForm.invalid">
         Login
       </button>
 
+      
+      <p class="error server-error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </p>
+
+      
       <p class="signup-text">
         Don’t Have Account?
         <a routerLink="/auth/register" class="signup-link">Sign Up</a>

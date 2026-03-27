@@ -3,7 +3,7 @@
   margin: 36px auto;
   padding: 32px 28px 28px 28px;
 
-  /* ✅ LOGIN PAGE BACKGROUND MATCH */
+
   background: #ffffff;
   border: 1.5px solid #bfe9e4;
   border-radius: 14px;
@@ -12,7 +12,7 @@
   h2 {
     text-align: center;
     font-size: 2rem;
-    color: #1aa39a; /* ✅ teal */
+    color: #1aa39a;
     margin-bottom: 23px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -31,7 +31,7 @@
         font-size: 1rem;
         font-weight: 600;
         margin-bottom: 5px;
-        color: #1aa39a; /* ✅ teal */
+        color: #1aa39a; 
         letter-spacing: 0.3px;
       }
 
@@ -45,7 +45,7 @@
         border-radius: 7px;
         outline: none;
 
-        /* ✅ login style input bg */
+      
         background: #f2fffd;
         color: #1a6f69;
 
@@ -57,7 +57,7 @@
         }
       }
 
-      /* ✅ readonly visual (no behavior change) */
+    
       .readonly-input {
         background: #eafffc;
         color: #1aa39a;
@@ -135,7 +135,7 @@
   }
 }
 
-/* ✅ PAGE BACKGROUND (LOGIN PAGE MATCH) */
+
 body {
   background: linear-gradient(135deg, #e6f7f4 0%, #d8f1ed 100%);
 }
@@ -146,14 +146,13 @@ body {
   background: linear-gradient(135deg, #e6f7f4 0%, #d8f1ed 100%);
 }
 
-/* ✅ LOGIN-PAGE STYLE MEDICAL BACKGROUND (ONLY BACKGROUND) */
 :host {
   display: block;
   min-height: 100vh;
 
   background-color: #e6f7f4;
 
-  /* Medical icons + heartbeat pattern */
+ 
   background-image:
     url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232bbdb3' stroke-width='4' opacity='0.25'%3E%3Cpath d='M0 300 L120 300 L150 260 L190 340 L230 300 L350 300'/%3E%3C/g%3E%3Cg fill='%232bbdb3' opacity='0.18'%3E%3Cpath d='M180 420 c-40 -40 -90 -80 -90 -140 c0 -50 40 -90 90 -90 c30 0 60 15 75 40 c15 -25 45 -40 75 -40 c50 0 90 40 90 90 c0 60 -50 100 -90 140 l-75 70 z'/%3E%3C/g%3E%3Cg stroke='%232bbdb3' stroke-width='6' fill='none' opacity='0.22'%3E%3Ccircle cx='460' cy='140' r='26'/%3E%3Cpath d='M460 166 v80 c0 30 -30 30 -30 60'/%3E%3C/g%3E%3C/svg%3E");
 

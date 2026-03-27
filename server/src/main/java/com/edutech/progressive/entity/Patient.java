@@ -98,8 +98,6 @@ public class Patient implements Comparable<Patient>{
 
     @Override
     public int compareTo(Patient o) {
-        // if(o==null || o.getFullName()==null ) return 1;
-        // if(this.getFullName()==null) return -1;
         return this.fullName.compareToIgnoreCase(o.fullName);
     }
 

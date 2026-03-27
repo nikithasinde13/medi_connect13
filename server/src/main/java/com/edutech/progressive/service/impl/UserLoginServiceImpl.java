@@ -40,7 +40,7 @@ public class UserLoginServiceImpl implements UserDetailsService {
         String email = userRegistrationDTO.getEmail();
         String username = userRegistrationDTO.getUsername();
 
-        // Validate role
+        
         if (!role.equalsIgnoreCase("PATIENT") && !role.equalsIgnoreCase("DOCTOR")) {
             throw new Exception("Invalid role. Only 'PATIENT' or 'DOCTOR' allowed.");
         }

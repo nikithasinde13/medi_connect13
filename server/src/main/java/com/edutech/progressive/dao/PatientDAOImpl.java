@@ -49,7 +49,7 @@ public class PatientDAOImpl implements PatientDAO {
                 }
             }
 
-            return -1; // No generated key returned
+            return -1; 
         }
     }
 

@@ -10,7 +10,6 @@ import { UserRegistrationDTO } from "src/app/mediconnect/models/UserRegistration
 })
 export class AuthService {
 
-  // ✅ WILL RESOLVE TO http://localhost:3000
   private baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
@@ -21,7 +20,6 @@ export class AuthService {
     })
   };
 
-  // ✅ LOGIN
   login(user: Partial<User>): Observable<any> {
     return this.http.post(
       `${this.baseUrl}/user/login`,
@@ -30,7 +28,6 @@ export class AuthService {
     );
   }
 
-  // ✅ REGISTER
   createUser(user: UserRegistrationDTO): Observable<any> {
     return this.http.post(
       `${this.baseUrl}/user/register`,
